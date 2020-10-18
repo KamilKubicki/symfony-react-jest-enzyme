@@ -23,7 +23,7 @@ $ composer require annotations twig asset
 $ composer require symfony/webpack-encore-bundle
 ```
 
-### Instalation of Frontend libraries
+### Installation of Frontend libraries
 
 ```sh
 $ yarn add react react-dom prop-types react-router-dom
@@ -54,6 +54,44 @@ Typescript params were placed inside `tsconfig.json`:
     "node_modules"
   ]
 }
+```
+
+### Wiring React & Symfony
+```text
+app/
+├─ templates/
+│ ├─ default/
+│ │    └─ index.html.twig
+│ └─ base.html.twig
+```
+
+```html
+{# base.html.twig #}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+    {% block body %}{% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</body>
+</html>
+```
+
+```html
+{# index.html.twig #}
+{% extends 'base.html.twig' %}
+ {% block title %} Symfony React Jest Enzyme {% endblock %}
+ {% block body %}
+     <div id="root"></div>
+ {% endblock %}
 ```
 
 ### Overriding default Encore configuration
