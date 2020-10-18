@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Route, Switch, Redirect } from 'react-router-dom';
 // @ts-ignore
-import { Home } from '@containers/Home';
+import Home from '@components/Home';
 
 const App = () => {
     return (
