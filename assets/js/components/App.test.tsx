@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import {describe, it} from "@jest/globals";
+import {describe, expect, it} from "@jest/globals";
 
 import App from './App';
 
-describe('<App \ />', () => {
+describe('<App />', () => {
     it('renders without crashing', () => {
         // Without Enzyme
         // const div = document.createElement('div');
@@ -13,5 +13,10 @@ describe('<App \ />', () => {
 
         //Enzyme
         shallow(<App />);
+    });
+
+    //Dummy test
+    it('dummy test', () => {
+        expect(1).toBe(1);
     });
 });
