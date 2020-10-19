@@ -65,7 +65,7 @@ app/
 │ └─ base.html.twig
 ```
 
-```html
+```
 {# base.html.twig #}
 <!DOCTYPE html>
 <html>
@@ -85,13 +85,13 @@ app/
 </html>
 ```
 
-```html
+```
 {# index.html.twig #}
 {% extends 'base.html.twig' %}
- {% block title %} Symfony React Jest Enzyme {% endblock %}
- {% block body %}
-     <div id="root"></div>
- {% endblock %}
+{% block title %} Symfony React Jest Enzyme {% endblock %}
+{% block body %}
+    <div id="root"></div>
+{% endblock %}
 ```
 
 ### Overriding default Encore configuration
