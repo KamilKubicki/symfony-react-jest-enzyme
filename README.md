@@ -1,6 +1,6 @@
 # Project Starter with Symfony 5, React, Jest + Enzyme
 
-This simple project starter shows how to wire up Symfony 5 with React and how to test the front part of the app with Jast & Enzyme.
+This simple project starter shows how to wire up Symfony 5 with React and how to test the front part of the app with Jest & Enzyme.
 
 <div align="center">
   
