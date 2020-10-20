@@ -15,6 +15,7 @@ Encore
     // only needed for CDN's or sub-directory deploy
     //.setManifestKeyPrefix('build/')
     .enableTypeScriptLoader()
+    .enableSassLoader()
 
     /*
      * ENTRY CONFIG
@@ -31,7 +32,8 @@ Encore
 
     .addAliases({
         '@containers': path.resolve(__dirname, './assets/js/containers'),
-        '@components': path.resolve(__dirname, './assets/js/components')
+        '@components': path.resolve(__dirname, './assets/js/components'),
+        '@styles': path.resolve(__dirname, './assets/styles')
     })
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
