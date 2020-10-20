@@ -30,6 +30,7 @@ $ yarn add react react-dom prop-types react-router-dom
 $ yarn add @babel/preset-react --dev
 $ yarn add @babel/plugin-syntax-jsx --dev
 $ yarn add typescript ts-loader --dev
+$ yarn add sass-loader@^8.0.0 node-sass --dev
 ```
 
 Typescript params were placed inside `tsconfig.json`:
@@ -63,9 +64,12 @@ app/
 │ ├─ default/
 │ │    └─ index.html.twig
 │ └─ base.html.twig
-```
 
 ```
+<!-- BEGIN SKIP -->
+<div markdown="0">
+
+```html
 {# base.html.twig #}
 <!DOCTYPE html>
 <html>
@@ -84,8 +88,12 @@ app/
 </body>
 </html>
 ```
+    
+</div>
 
-```
+<div markdown="0">
+    
+```html
 {# index.html.twig #}
 {% extends 'base.html.twig' %}
 {% block title %} Symfony React Jest Enzyme {% endblock %}
@@ -93,6 +101,9 @@ app/
     <div id="root"></div>
 {% endblock %}
 ```
+    
+</div> 
+<!-- END SKIP -->
 
 ### Overriding default Encore configuration
 
@@ -167,6 +178,9 @@ module.exports = {
     rootDir: './assets',
     testRegex: './assets/js/.*test\\.tsx',
     setupFiles: ['<rootDir>/tests/setup.js'],
+    //Generate coverage reports as HTML
+    //inside /assets/coverage directory
+    //"coverageReporters": ["json", "html"],
     collectCoverageFrom: [
         "<rootDir>/js/**/*.{js,jsx,ts,tsx}"
     ],
@@ -213,6 +227,7 @@ module.exports = {
 +   moduleNameMapper: {
 +       '^@containers(.*)$': '<rootDir>/js/containers/$1',
 +       '^@components(.*)$': '<rootDir>/js/components$1',
++       '^@styles(.*)$': '<rootDir>/styles'
 +   },
     collectCoverageFrom: [
         "<rootDir>/js/**/*.{js,jsx,ts,tsx}"
@@ -243,7 +258,8 @@ Encore
 
 +   .addAliases({
 +       '@containers': path.resolve(__dirname, './assets/js/containers'),
-+       '@components': path.resolve(__dirname, './assets/js/components')
++       '@components': path.resolve(__dirname, './assets/js/components'),
++       '@styles': path.resolve(__dirname, './assets/styles')
 +   })
 ...
 ```    
