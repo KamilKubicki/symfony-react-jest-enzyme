@@ -28,6 +28,7 @@ $ composer require symfony/webpack-encore-bundle
 ```sh
 $ yarn add react react-dom prop-types react-router-dom
 $ yarn add @babel/preset-react --dev
+$ yarn add @babel/preset-typescript --dev
 $ yarn add @babel/plugin-syntax-jsx --dev
 $ yarn add typescript ts-loader --dev
 $ yarn add sass-loader@^8.0.0 node-sass --dev
