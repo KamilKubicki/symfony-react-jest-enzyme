@@ -66,8 +66,6 @@ app/
 │ └─ base.html.twig
 
 ```
-<!-- BEGIN SKIP -->
-<div markdown="0">
 
 ```html
 {# base.html.twig #}
@@ -89,10 +87,6 @@ app/
 </html>
 ```
     
-</div>
-
-<div markdown="0">
-    
 ```html
 {# index.html.twig #}
 {% extends 'base.html.twig' %}
@@ -101,9 +95,6 @@ app/
     <div id="root"></div>
 {% endblock %}
 ```
-    
-</div> 
-<!-- END SKIP -->
 
 ### Overriding default Encore configuration
 
