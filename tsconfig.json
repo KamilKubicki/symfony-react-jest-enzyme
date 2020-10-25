@@ -8,10 +8,17 @@
     "removeComments": true,
     "declaration": false,
     "sourceMap": true,
+    "strict": true,
     "suppressImplicitAnyIndexErrors": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "baseUrl": "./assets",
+    "paths": {
+      "@styles/*": ["js/styles/*"],
+      "@containers/*": ["js/containers/*"],
+      "@components/*": ["js/components/*"]
+    }
   },
-  "strict": true,
   "compileOnSave": true,
   "exclude": [
     "node_modules"

@@ -47,10 +47,12 @@ Typescript params were placed inside `tsconfig.json`:
     "removeComments": true,
     "declaration": false,
     "sourceMap": true,
+    "strict": true,
     "suppressImplicitAnyIndexErrors": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    //Removes IDE TS errors while importing modules
+    "noImplicitAny": false
   },
-  "strict": true,
   "compileOnSave": true,
   "exclude": [
     "node_modules"
@@ -208,6 +210,7 @@ Adding aliases will help you to navigate between nested directories/components i
 
 - jest.config.js - define aliases for tests
 - webpack.config.js - ships aliases for development
+- tsconfig.js - ships aliases for IDE (removes unwanted errors while importing modules using aliases)
 
 ```diff
 //jest.config.js
@@ -256,6 +259,24 @@ Encore
 ...
 ```    
     
+```diff
+//tsconfig.js
+
+{
+  "compilerOptions": {
+    //Removes IDE TS errors while importing modules
+    "noImplicitAny": false,
++    "baseUrl": "./assets",
++    "paths": {
++      "@styles/*": ["js/styles/*"],
++      "@containers/*": ["js/containers/*"],
++      "@components/*": ["js/components/*"]
++    }
+  },
+...
+}
+```
+
 ## Final directory structure
 
 ```text
